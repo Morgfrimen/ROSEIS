@@ -8,12 +8,11 @@ namespace Service
     public class SettingApp
     {
         private readonly IConfiguration _configuration;
-        private int HoutsDay = 0;
+        private int HoutsDay = 24*5;
 
         public SettingApp(IConfiguration configuration)
         {
             _configuration = configuration;
-            this.TestWorker = _configuration.GetValue<int>(key: nameof(this.TestWorker));
             this.DateTimeCheck = _configuration.GetValue<DateTime>(key: nameof(this.DateTimeCheck));
             this.PeriodTimeSpanDay =
                 _configuration.GetValue<int>(key: nameof(this.PeriodTimeSpanDay));
@@ -25,15 +24,13 @@ namespace Service
         {
         }
 
-        public SettingApp(int test, DateTime time, int periodTimeSpanDay,int periodTimeSpanSecond)
+        public SettingApp( DateTime time, int periodTimeSpanDay,int periodTimeSpanSecond)
         {
-            this.TestWorker = test;
             this.DateTimeCheck = time;
             this.PeriodTimeSpanDay = periodTimeSpanDay;
             this.PeriodTimeSpanSecond = periodTimeSpanSecond;
         }
 
-        public int TestWorker { get; set; }
 
         public DateTime DateTimeCheck { get; set; }
 
@@ -49,11 +46,10 @@ namespace Service
             using (FileStream fs = new FileStream(path: patch, mode: FileMode.OpenOrCreate,
                 access: FileAccess.ReadWrite))
             {
-                if (this.TestWorker == default && this.DateTimeCheck == default)
+                if ( this.DateTimeCheck == default)
                 {
-                    SettingApp settingApp = new SettingApp(test: 999999, time: DateTime.Now,
-                        periodTimeSpanDay: HoutsDay,10);
-                    this.TestWorker = settingApp.TestWorker;
+                    SettingApp settingApp = new SettingApp(time: DateTime.Now,
+                        periodTimeSpanDay: HoutsDay,default);
                     this.DateTimeCheck = settingApp.DateTimeCheck;
                     this.PeriodTimeSpanDay = settingApp.PeriodTimeSpanDay;
                     await JsonSerializer.SerializeAsync<SettingApp>(utf8Json: fs, value: settingApp,
