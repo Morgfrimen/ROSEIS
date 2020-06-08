@@ -27,9 +27,10 @@ namespace Service
             _logger.LogInformation("Начало работы");
             while (!stoppingToken.IsCancellationRequested)
             {
-                await Task.Run(action: () => { workers.RunWork(); });
-                if(workers.IsParse)
-                    Thread.Sleep(new TimeSpan(_settingApp.PeriodTimeSpanDay,0,_settingApp.PeriodTimeSpanSecond));//вырубаем нахер, чтоб не грузил проц
+                //await Task.Run(action: () => { workers.RunWork(); }).ConfigureAwait(true);
+                workers.RunWork();
+                if (workers.IsParse)
+                    Thread.Sleep(new TimeSpan(_settingApp.PeriodTimeSpanDay,0,_settingApp.PeriodTimeSpanSecond));//вырубаем поток нахер, чтоб не грузил проц
                 workers.IsParse = false;
             }
         }

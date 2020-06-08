@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using ParserLib;
+using ParserLib.RosAtomSequester;
 
 namespace WorkersDataParserLib
 {
@@ -24,6 +26,13 @@ namespace WorkersDataParserLib
             if (now.DayOfWeek == timeCheck.DayOfWeek && !IsParse)
             {
                 //парсинг данных
+                var first = new RosAtomSequesterParser();
+                var second = new RosAtomSequesterParserSettings();
+                second.PostFix = "32009180292";//для теста пока так
+                ParserLib.ParserWorker<string[]> parser = new ParserWorker<string[]>(first,second);
+                parser.OnNewData += Parser_OnNewData;
+                parser.Start();
+                
                 //созранение данных
                 IsParse = true;
             }
@@ -32,6 +41,11 @@ namespace WorkersDataParserLib
                 IsParse = false;
                 RunWork();
             }
+        }
+
+        private void Parser_OnNewData(object arg1, string[] arg2)
+        {
+            var testresult = arg2;
         }
     }
 }
