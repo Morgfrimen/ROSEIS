@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{017B56F0-9379-47F4-BDFD-86B90029F846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{A51FD501-EC25-4198-B776-B648F4959BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{A51FD501-EC25-4198-B776-B648F4959BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsDataLib", "ModelsDataLib\ModelsDataLib.csproj", "{66082223-6D1E-4B2A-B4AD-A0484205E6B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsDataLib", "ModelsDataLib\ModelsDataLib.csproj", "{66082223-6D1E-4B2A-B4AD-A0484205E6B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkersDataParserLib", "WorkersDataParserLib\WorkersDataParserLib.csproj", "{4A41D7C7-8725-488D-A9D5-3764A54A89AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkersDataParserLib", "WorkersDataParserLib\WorkersDataParserLib.csproj", "{4A41D7C7-8725-488D-A9D5-3764A54A89AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserLib", "ParserLib\ParserLib.csproj", "{F42BE840-48C7-479C-817D-8A185B63A9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserLib", "ParserLib\ParserLib.csproj", "{F42BE840-48C7-479C-817D-8A185B63A9B7}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ParserEIC", "FSharp\ParserEIC.fsproj", "{3193ED9B-2880-4510-8AA1-81700649A3A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F42BE840-48C7-479C-817D-8A185B63A9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F42BE840-48C7-479C-817D-8A185B63A9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F42BE840-48C7-479C-817D-8A185B63A9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3193ED9B-2880-4510-8AA1-81700649A3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3193ED9B-2880-4510-8AA1-81700649A3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3193ED9B-2880-4510-8AA1-81700649A3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3193ED9B-2880-4510-8AA1-81700649A3A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
