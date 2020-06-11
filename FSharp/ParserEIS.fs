@@ -1,4 +1,4 @@
-﻿namespace FSharp
+﻿namespace ParserEIC
 
 module ParserSite =
     open FSharp.Data
